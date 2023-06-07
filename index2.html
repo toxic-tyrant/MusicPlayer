@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Spotify - Web Player</title>
+  <link rel="icon" href="./icons8-spotify-a-swedish-audio-streaming-platform-that-provides-drm-protected-24.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-ios.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href=".\styles.css">
+</head>
+<!-- main wavesurfer.js lib -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
+<!-- wavesurfer.js regions -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.regions.min.js"></script>
+
+<script src="" charset="utf-8"></script>
+<script src="editor\actionhelper.js"></script>
+<script src="editor\audio.js"></script>
+
+<body>
+  <div class="main-div">
+    <div class="left">
+      <div class="left1">
+        <div class="brand_div">
+
+
+          <li class="brand"><a href="index.html" style="text-decoration: none"><img src=".\logo2.png" alt="logo"></a></li>
+          <br>
+        </div>
+        <br>
+        <ul class="lefta">
+
+
+          <li><img class="homelogo images1" src=".\home.png" alt=""><a href="index.html" style="text-decoration: none ; color:rgb(153, 149, 149)"><strong>Home</strong></a></li>
+          <li><img class="homelogo images1" src=".\search.png" alt=""><Strong>Search</Strong></li>
+          <li><img class="homelogo images1" src=".\library.png" alt=""><strong>Your Library</strong></li>
+
+          <br><br>
+          <li><img class="homelogo images1"
+              src=".\transparent-playlist-icon-5daf4c589d9501.3183017715717694326455 (1).png" alt=""><strong>Create
+              playlist</strong></li>
+          <li><img class="homelogo images1" src=".\liked.jpg" alt=""><a href="LikedSongs.html"
+              style="text-decoration:none ; color:rgb(153, 149, 149)"><strong>Liked songs</strong></a></li>
+
+        </ul>
+        <hr>
+        <li class="playlist"><a href="Fav.html" style="text-decoration: none ; color:rgb(153, 149, 149)"><strong>Fav</strong></a></li>
+        <li class="playlist"><a href="New.html" style="text-decoration: none ; color:rgb(153, 149, 149)"><strong>New</strong></a></li>
+
+
+
+      </div>
+
+      <div class="left2">
+
+      </div>
+    </div>
+
+
+
+    <!-- *************************************RIGHT SIDE DIVISION******************************************* -->
+
+
+    <div class="right">
+
+      <!-- ***********************RIGHT SIDE GM***************************************** -->
+
+
+      <div class="right1">
+        <div class="goodmorning">
+          Audio Editor
+        </div>
+        <div onLoad="showTour()"> 
+        <div class="w3-container">
+            <br>
+            <div id="waveform" class="w3-border w3-round-large" 
+                data-step="3" data-intro="Click and drag to select section">	
+            </div>
+            <br>
+              <div class="w3-row">
+              <div class="w3-half w3-container w3-hide" id="audio-buttons">
+              <button class="w3-button w3-border w3-border-green w3-round-xlarge" onClick="playAndPause()">
+                  <i id="play-pause-icon" class="fa fa-play"></i>
+              </button>
+      
+              <b id="time-current">0.00</b> / <b id="time-total">0.00</b>
+              </div>
+              <div class="w3-half w3-container">
+              <input id="audio-file" type="file" onChange="loadAudio()"
+                  data-step="2" data-intro="Select a MP3 File">
+              </div>
+              </div>
+            <hr>
+                  <div data-step="4" data-intro="Would you like to know how to merge tracks. Click Next.">
+                  <table class="w3-table-all w3-card-4" id="audio-tracks" 
+                      data-step="5" data-intro="Select atleast 2 checkboxes for merging. Click Next.">
+                     <thead>
+                  <tr class="w3-border w3-border-teal w3-text-teal">
+                    <th></th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody></tbody>
+                  <tfoot></tfoot>
+                </table>
+                </div>
+                <br>
+                <div id="merge-option" class="w3-hide">
+                  <button class="w3-button w3-border w3-border-teal w3-round-xlarge" onClick="mergeTrack()"
+                      data-step="6" data-intro="Click to merge selected tracks. Bye bye!! :)">
+                      <i>Merge tracks</i>
+                  </button>	 
+                  <br><br>
+                  <div class="w3-row w3-hide" id="merged-track-div">
+                  <b class="w3-col l1 w3-text-olive"><i>Merged Audio : </i></b>	
+                  <audio controls="controls" class="w3-col l11" id="merged-track">
+                      <source src="" type="">
+                  </audio>
+                  </div>
+                </div>
+          </div>
+        </div>
+
+</body>
+</html>
